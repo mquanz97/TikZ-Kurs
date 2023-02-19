@@ -1,0 +1,22 @@
+\documentclass{article}
+\usepackage{tikz}
+\usetikzlibrary{intersections}
+\begin{document}
+	
+%	\begin{tikzpicture}
+%		%(x,y)
+%	%	++(x,y)
+%	\draw (1.5,2.5) -- ++(1,0);
+%	\draw (30:1cm) -- (50:3cm);
+%	\end{tikzpicture}
+	
+	\begin{tikzpicture}
+		
+		\draw (0,0) -- (5,0);
+		\path[name path=Schräg] (30:1cm)--(45:3cm);
+		\path[name path=Waagerecht] (0,1.5)--(3,1.5);
+		\path [name intersections={of=Schräg and Waagerecht, by=Schnittpunkt}];
+		\draw (0,0)--(Schnittpunkt);
+	\end{tikzpicture}
+	
+\end{document}
