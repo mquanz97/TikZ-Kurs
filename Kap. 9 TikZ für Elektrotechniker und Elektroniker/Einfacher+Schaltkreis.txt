@@ -1,0 +1,37 @@
+\documentclass{article}
+\usepackage[european, siunitx]{circuitikz}
+
+\begin{document}
+	\subsection*{Schaltkreise}
+	\subsubsection*{Einfacher Schaltkreis}
+	\begin{circuitikz}
+		
+		\draw(0,0) to [battery1] (0,2)
+		to [normal open switch] (2,2)
+		to [lamp] ++(0,-2)
+		to(0,0)
+		;
+		
+	\end{circuitikz}
+	
+	\subsubsection*{Reihenschaltung}
+	
+	\begin{circuitikz}
+		
+		\draw (0,0) to [R, l=$R_1$] (2,0);
+		\draw (2,0) to [R, l =$R_2$] (4,0);
+		
+		
+	\end{circuitikz}
+	
+	\subsubsection*{Parallelschaltung}
+	
+	\begin{circuitikz}
+		
+	\draw (-1,0) to [R, l=$R_1$] (3,0);
+	\draw (0,0) to (0,-1.5) to [R, l=$R_2$](2,-1.5) to (2,0);
+		
+	\end{circuitikz}
+	
+	
+\end{document}

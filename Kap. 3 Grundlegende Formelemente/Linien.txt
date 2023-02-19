@@ -1,0 +1,9 @@
+\documentclass{article}
+\usepackage{tikz}
+
+\begin{document}
+	\begin{tikzpicture}
+		\draw[red] (0,0)--(2,0)--(3,2)--cycle;
+		
+	\end{tikzpicture}
+\end{document}

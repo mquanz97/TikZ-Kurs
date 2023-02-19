@@ -1,0 +1,27 @@
+\documentclass{article}
+
+\usepackage{tikz}
+\usepackage{chemfig}
+\begin{document}
+
+\subsubsection*{Ringe}
+Atom * Anzahl(Code)
+
+\schemestart
+\chemname{\chemfig{*6(------)}}{Polygon}
+\schemestop
+\hspace{10pt}
+\schemestart
+\chemname{\chemfig{*6(-=-=-=)}}{Einfache\\ Strukturformel \\ Benzol}
+\schemestop
+\hspace{15pt}
+\schemestart
+\chemname{\chemfig{C*6(-C=C-C=C-C=)}}{zusätzliche \\C-Atome}
+\schemestop
+\hspace{15pt}
+\schemestart
+\chemname{\chemfig{C*6((-H)-C(-H)=C(-H)-C(-H)=C(-H)-C(-H)=)}}{komplexe \\Strukturformel\\Benzol}
+\schemestop
+
+
+\end{document}

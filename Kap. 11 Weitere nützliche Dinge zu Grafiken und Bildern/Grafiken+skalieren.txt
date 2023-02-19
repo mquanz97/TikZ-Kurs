@@ -1,0 +1,14 @@
+\documentclass{article}
+
+\usepackage{tikz}
+\begin{document}
+
+	\begin{tikzpicture}[line width=2pt,line join=round, transform canvas={scale=3}]
+
+	\filldraw[lightgray,draw=black]
+	(0,0)--(1,0)--(1,1)--(0,1)--cycle;
+	\filldraw[gray,draw=black](0,1)--++(0.25,0.25)--++(1,0)--(1,1)--cycle;
+	\filldraw[darkgray,draw=black](1,0)--++(0.25,0.25)--++(0,1)--(1,1)--(1,0);
+	
+	\end{tikzpicture}
+\end{document}

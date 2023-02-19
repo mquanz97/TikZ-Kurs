@@ -1,0 +1,13 @@
+\documentclass{article}
+
+\usepackage{tikz}
+\usepackage{chemfig}
+\begin{document}
+
+\schemestart
+\chemname[2em]{\chemfig{H-C(-[2]H)(-[6]H)-C(-[2]H)(-[6]H)-OH}}{Ethanol}
+\schemestop
+
+
+
+\end{document}

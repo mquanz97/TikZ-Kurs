@@ -1,0 +1,42 @@
+\documentclass{article}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usepackage{xcolor}
+
+
+\begin{document}
+\subsection*{Design von Nodes ändern}
+	\subsubsection*{Schrift}
+	\begin{tikzpicture}
+		\node[font=\itshape] at (0,0){Beispiel Kursiv};
+		\node[font=\bfseries] at (0,-1){Beispiel Fett};
+		\node[red] at (0,-2){Beispiel Schriftfarbe};
+		\node[align=center] at (0,-3){Beispiel\\ Schriftfarbe};
+		\node[align=left] at (0,-4){Beispiel\\ Schriftfarbe};
+		\node[align=right] at (0,-5){Beispiel\\ Schriftfarbe};
+	\end{tikzpicture}
+	
+\subsubsection*{Form und Farbe}
+\begin{tikzpicture}
+	\node[fill=blue!10] at (0,0){Beispiel Hintergrund};
+	\node[fill=blue!10, draw=blue] at (0,-1){Beispiel Hintergrund};
+	%\node[circle,fill=blue!10, draw=blue] at (0,-2){Beispiel Hintergrund};
+	\node[rectangle, rounded corners=5pt,fill=blue!10, draw=blue] at (0,-3){Beispiel Hintergrund};
+	\node[fill=blue!10, minimum width=5cm] at (0,-4){Beispiel Hintergrund};
+	\node[fill=blue!20, minimum height=2cm] at (0,-5){Beispiel Hintergrund};
+\end{tikzpicture}
+
+\subsubsection*{Styles}
+
+\begin{tikzpicture}[
+	Stilname/.style={green, draw=red, fill=green!5}
+	]
+	
+		\node[Stilname] at (0,0){Beispiel Stil};
+			\node[Stilname] at (0,1){Beispiel Stil};
+				\node[Stilname] at (0,2){Beispiel Stil};
+					\node[Stilname] at (0,3){Beispiel Stil};
+						\node[Stilname] at (0,4){Beispiel Stil};
+\end{tikzpicture}
+	
+\end{document}

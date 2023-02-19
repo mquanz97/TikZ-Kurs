@@ -1,0 +1,13 @@
+\documentclass{article}
+
+\usepackage{tikz}
+\usepackage{chemfig}
+\begin{document}
+
+\schemestart
+\chemname[2em]{\chemfig{H_3C-C(=[1]O)(-[7]OH)}}{Essigsäure}
+\schemestop
+
+
+
+\end{document}

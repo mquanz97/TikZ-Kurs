@@ -1,0 +1,43 @@
+\documentclass{article}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usepackage{xcolor}
+
+
+\begin{document}
+\subsection*{Pfeile und Anker}
+	
+	\begin{tikzpicture}[
+		1/.style={fill=red}, 
+		2/.style={fill=blue}
+		]
+		
+		\node (Anker){Anker};
+		\node at (Anker.north)[1]{};
+		\node at (Anker.south)[1]{};
+		\node at (Anker.west)[1]{};
+		\node at (Anker.east)[1]{};
+		\node at (Anker.north west)[2]{};
+		\node at (Anker.south west)[2]{};
+		\node at (Anker.north east)[2]{};
+		\node at (Anker.south east)[2]{};
+		
+		
+	\end{tikzpicture}
+
+\begin{tikzpicture}
+	\filldraw[black] (0,0) circle (0.15cm)
+	node [above=1cm](above){above}
+	node [left=1cm](left){left}
+	node [right=1cm](right){right}
+	node [below=1cm](below){below};
+	
+	%\draw[->](above)--(right);
+	\draw[->](above)--node[right]{Beschriftung auf Pfeil}(right);
+	\draw[->](left.south west)--(below.west);
+	\draw[->](left.east)--(below.east);
+	\draw[->,ultra thick](above.south west)--(left.north east);
+	;
+\end{tikzpicture}
+	
+\end{document}

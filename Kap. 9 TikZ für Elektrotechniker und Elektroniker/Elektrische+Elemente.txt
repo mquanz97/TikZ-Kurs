@@ -1,0 +1,78 @@
+\documentclass{article}
+\usepackage[european, siunitx]{circuitikz}
+
+\begin{document}
+\subsection*{Bibliothek elektrischer Bauteile}
+	\subsubsection*{Grundlegende Elemente}
+	\subsubsection*{Widerstände}
+	
+	\begin{circuitikz}
+		\draw(0,0) to [R] (2,0);
+	\end{circuitikz}
+	\newline
+	\begin{circuitikz}
+		\draw(0,0) to [vR] (2,0);
+	\end{circuitikz}
+	
+	\subsubsection*{Beispiele für Label}
+	\begin{circuitikz}
+		\draw(0,0) to [R,l=2<\milli\ohm>] (2,0);
+	\end{circuitikz}
+	\newline
+	\begin{circuitikz}
+		\draw(0,0) to [R,l_=2<\milli\ohm>] (2,0);
+	\end{circuitikz}
+		\newline
+	\begin{circuitikz}
+		\draw(0,0) to [R, l=$R_1$] (2,0);
+	\end{circuitikz}
+\newline
+	\begin{circuitikz}
+		\draw(0,0) to [R, l=$R_1$, a=2<\milli\ohm>] (2,0);
+	\end{circuitikz}
+\subsubsection*{Kondesatoren}
+\begin{circuitikz}
+	\draw(0,0) to [C] (2,0);
+\end{circuitikz}
+\subsubsection*{Stromquellen}
+\subsubsection*{Batterie}
+\begin{circuitikz}
+	\draw(0,0) to [battery1] (2,0);
+\end{circuitikz}
+\subsubsection*{Spannungsquelle}
+\begin{circuitikz}
+	\draw(0,0) to [european voltage source] (2,0);
+\end{circuitikz}
+
+\subsubsection*{Dioden}
+\begin{circuitikz}
+	\draw(0,0) to [empty diode] (2,0);
+\end{circuitikz}
+
+\subsubsection*{Schalter}
+\begin{circuitikz}
+	\draw(0,0) to [normal open switch] (2,0);
+\end{circuitikz}
+
+\subsubsection*{Glühlampe}
+\begin{circuitikz}
+	\draw(0,0) to [lamp] (2,0);
+\end{circuitikz}
+
+\subsubsection*{Messgeräte}
+\begin{circuitikz}
+	\draw(0,0) to [ammeter] (2,0);
+\end{circuitikz}
+\newline
+\begin{circuitikz}
+	\draw(0,0) to [voltmeter] (2,0);
+\end{circuitikz}
+\newline
+\begin{circuitikz}
+	\draw(0,0) to [rmeter,t=A] (2,0);
+\end{circuitikz}
+\newline
+\begin{circuitikz}
+	\draw(0,0) to [rmeter,t=V] (2,0);
+\end{circuitikz}
+\end{document}

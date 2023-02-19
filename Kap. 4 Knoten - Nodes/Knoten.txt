@@ -1,0 +1,45 @@
+\documentclass{article}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usepackage{xcolor}
+
+
+\begin{document}
+\subsubsection*{Knoten}
+	
+	\begin{tikzpicture}
+		
+		\node at (2,2) {Test};
+		
+		\draw (0,0) --(5,0)node[above](2){2};
+		
+		\node[right of=2]{3};
+		%\node[options] (node name) {};
+	\end{tikzpicture}
+	
+		\subsubsection*{Richtungen abhängig von anderen Knoten}
+	\begin{tikzpicture}
+		\filldraw [black](0,0) circle (0.15cm) 
+		node [above=1cm]{above}
+		node [left=1cm]{left}
+		node [right=1cm]{right}
+		node [below=1cm]{below}
+		node [above right=1cm]{above right}
+		node [below right=1cm]{below right}
+		node [below left=1cm]{below left}
+		node [above left=1cm]{above left};
+	
+		
+	\end{tikzpicture}
+	
+	\subsubsection*{Nodes verschieben}
+	
+	\begin{tikzpicture}
+		\filldraw [black](0,0) circle (0.15cm) 
+	node [above=1cm,xshift=1cm,yshift=2cm]{above};
+	
+	
+	\end{tikzpicture}
+	
+	
+\end{document}

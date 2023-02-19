@@ -1,0 +1,52 @@
+\documentclass{article}
+
+\usepackage{tikz}
+\usepackage{xcolor}
+
+\begin{document}
+\section*{Standardfarben}
+	\begin{tikzpicture}[line width=5pt]
+				\draw[violet] (0,1)--(2,1) node[right]{violet};
+				\draw[purple] (0,2)--(2,2) node[right]{purple};
+				\draw[pink] (0,3)--(2,3) node[right]{pink};
+				\draw[orange](0,4)--(2,4) node[right]{orange};
+				\draw[olive](0,5)--(2,5) node[right]{olive};
+				\draw[lime] (0,6)--(2,6) node[right]{lime};
+				\draw[brown] (0,7)--(2,7) node[right]{brown};
+				\draw[teal] (0,8)--(2,8) node[right]{teal};
+				\draw[magenta] (0,9)--(2,9) node[right]{magenta};
+				\draw[cyan] (0,10)--(2,10) node[right]{cyan};
+				\draw[blue] (0,11)--(2,11) node[right]{blue};
+				\draw[green] (0,12)--(2,12) node[right]{green};
+				\draw[red] (0,13)--(2,13) node[right]{red};
+				\draw[yellow] (0,14)--(2,14) node[right]{yellow};
+		\draw[white!95!black] (0,15)--(2,15) node[right]{white};
+		\draw[lightgray] (0,16)--(2,16) node[right]{lightgray};
+		\draw[gray] (0,17)--(2,17) node[right]{gray};
+		\draw[darkgray] (0,18)--(2,18) node[right]{darkgray};
+		\draw[black] (0,19)--(2,19) node[right]{black};
+	\end{tikzpicture}
+	\\
+\section*{Deckungsgrad verringern}
+	\begin{tikzpicture}[line width=5pt]
+			\draw[blue] (0,-1)--(2,-1) node[right]{blue};
+			\draw[blue!80] (0,-2)--(2,-2) node[right]{blue!80};
+			\draw[blue!60] (0,-3)--(2,-3) node[right]{blue!60};
+			\draw[blue!40](0,-4)--(2,-4) node[right]{blue!40};
+			\draw[blue!20](0,-5)--(2,-5) node[right]{blue!20};
+	\end{tikzpicture}
+\section*{Mischen}
+	\begin{tikzpicture}[line width=5pt]
+			\draw[blue] (0,-1)--(2,-1) node[right]{blue};
+			\draw[blue!50!black] (0,-2)--(2,-2) node[right]{blue!50!black};
+			\draw[blue!50!red] (0,-3)--(2,-3) node[right]{blue!50!red};
+			\draw[blue!40!yellow](0,-4)--(2,-4) node[right]{blue!50!yellow};
+			\draw[cyan!50!yellow](0,-5)--(2,-5) node[right]{cyan!50!yellow};
+	\definecolor{dunkelblau}{rgb}{0.07, 0.04, 0.56}
+			\draw[dunkelblau](0,-6)--(2,-6) node[right]{dunkelblau};
+			\definecolor{anderesblau}{RGB}{0.07, 0.04, 0.56}
+			\draw[anderesblau](0,-7)--(2,-7) node[right]{anderesblau};
+	\end{tikzpicture}
+	
+	
+\end{document}

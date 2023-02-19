@@ -1,0 +1,38 @@
+\documentclass{article}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usepackage{xcolor}
+\usetikzlibrary{shapes}
+\begin{document}
+	\section*{Flowchart für Ingenieure}
+	\begin{tikzpicture}[
+		Entscheidung/.style={diamond, fill=violet, thick, draw=black},
+		Aktion/.style={rectangle, fill=blue!10, thick, draw=black},
+		Grenze/.style={rectangle, rounded corners=5pt, fill=green!20, thick, draw=green!50!black},
+		Kreis/.style={circle, fill=pink, thick, draw=black},
+		Trapez/.style={trapezium, trapezium left angle =65, trapezium right angle=120, fill=lime, draw=magenta, thick},
+		nein/.style={text=red!50!black, fill=red,xshift=5mm},
+		ja/.style={text=green!50!black, fill=green, xshift=-5mm},
+		Pfeil/.style={->, very thick},
+		node distance=40mm		
+		]
+	\node[Grenze](Start){Start};
+	\node[Entscheidung, below of=Start,yshift=1cm, text=white] (1) {Bewegt es sich?};
+	\node[Kreis, below of=1, xshift=-2.5cm](2){Sollte es sich bewegen?};
+	\node[Trapez, below of=1, xshift=2.5cm](3){Sollte es sich bewegen?};
+	\node[Aktion, below of=2, xshift=-3cm] (Panzertape) {Benutze mehr Panzertape!};
+	\node[Grenze, below of=2, xshift=2.5cm] (Gut) {Kein Problem!};
+	\node[Aktion, below of=3, xshift=3cm] (WD40) {Mehr WD40!};
+	\draw[Pfeil](Start)--(1);
+	\draw[Pfeil](1)--node[ja, left]{ja}(2);
+	\draw[Pfeil](1)--node[right, nein]{nein}(3);
+	\draw[Pfeil](2)--node[ja, left]{ja}(Panzertape);
+	\draw[Pfeil](2)--node[left, nein, xshift=-8mm]{nein}(Gut);
+	\draw[Pfeil](3)--node[ja, right,xshift=8mm]{ja}(Gut);
+	\draw[Pfeil](3)--node[right, nein]{nein}(WD40);	
+	
+
+\end{tikzpicture}
+	
+		
+\end{document}

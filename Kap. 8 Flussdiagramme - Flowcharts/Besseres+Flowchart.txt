@@ -1,0 +1,39 @@
+\documentclass{article}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usepackage{xcolor}
+\usetikzlibrary{shapes}
+\begin{document}
+	\section*{Schönes Flowchart für Ingenieure}
+	\begin{tikzpicture}[
+		Entscheidung/.style={diamond, aspect=1.5, fill=violet!70, thick, draw=black},
+		Aktion/.style={rectangle, fill=blue!20, thick, draw=black},
+		Grenze/.style={rectangle, rounded corners=5pt, fill=green!20, thick, draw=green!50!black},
+		%Kreis/.style={circle, fill=pink, thick, draw=black},
+		Zweite/.style={rectangle, rounded corners= 10pt,minimum height= 3em, fill=lime, thick, draw=black},
+		%Trapez/.style={trapezium, trapezium left angle =65, trapezium right angle=120, fill=lime, draw=magenta, thick},
+		nein/.style={xshift=5mm, yshift=-1.5cm, draw=red},
+		ja/.style={xshift=-5mm,yshift=-1.5cm, draw=green},
+		Pfeil/.style={->, very thick},
+		node distance=30mm		
+		]
+	\node[Grenze](Start){Start};
+	\node[Entscheidung, below of=Start,yshift=1cm, text=white] (1) {Bewegt es sich?};
+	\node[Zweite, below of=1, xshift=-2.5cm](2){Sollte es sich bewegen?};
+	\node[Zweite, below of=1, xshift=2.5cm](3){Sollte es sich bewegen?};
+	\node[Aktion, below of=2, xshift=-3cm] (Panzertape) {Benutze mehr Panzertape!};
+	\node[Grenze, below of=2, xshift=2.5cm] (Gut) {Kein Problem!};
+	\node[Aktion, below of=3, xshift=3cm] (WD40) {Mehr WD40!};
+	\draw[Pfeil](Start)--(1);
+	\draw[Pfeil](1)-|node[ja, left]{ja}(2);
+	\draw[Pfeil](1)-|node[right, nein]{nein}(3);
+	\draw[Pfeil](2)-|node[ja, left]{ja}(Panzertape);
+	\draw[Pfeil](2)|-node[above, nein, xshift=2mm,yshift=2cm]{nein}(Gut);
+	\draw[Pfeil](3)|-node[ja, above,yshift=2cm]{ja}(Gut);
+	\draw[Pfeil](3)-|node[right, nein]{nein}(WD40);	
+	
+
+\end{tikzpicture}
+	
+		
+\end{document}

@@ -1,0 +1,115 @@
+\documentclass{article}
+
+\usepackage{tikz}
+\usepackage{xcolor}
+\usetikzlibrary{trees}
+
+\begin{document}
+	
+	\begin{tikzpicture}
+		
+		\node {Test} child child child child;
+		
+		
+	\end{tikzpicture}
+	
+		\begin{tikzpicture}
+		
+		\node {Eltern} 
+			child {node {Kind 1}}
+			child {node {Kind 2}}
+			child {node {Kind 3}}
+			child {node {Kind 4}
+				child {node {Enkel 1}}
+				child {node {Enkelin 1}}	
+		};
+			
+	\end{tikzpicture}
+	
+	\begin{tikzpicture}[every node/.style={draw, rectangle, minimum width=1cm},
+		%level distance= 2cm, sibling distance=2cm
+		level 1/.style={sibling distance=4cm},
+		level 2/.style={sibling distance=2cm},
+		]
+		
+		\node {Eltern} 
+		child {node {Kind 1}}
+		child {node {Kind 2}}
+		child {node {Kind 3}}
+		child {node {Kind 4}
+			child {node {Enkel 1}}
+			child {node {Enkelin 1}}	
+		};
+		
+	\end{tikzpicture}
+	
+	\begin{tikzpicture}[every node/.style={draw, rectangle, minimum width=1cm},
+	%grow=right
+	%grow=south east
+	grow=270
+		]
+		
+		\node {Eltern} 
+		child {node {Kind 1}}
+		child {node {Kind 2}}
+		child {node {Kind 3}}
+		child {node {Kind 4}
+			child {node {Enkel 1}}
+			child {node {Enkelin 1}}	
+		};
+		
+	\end{tikzpicture}
+
+\subsubsection*{Weitere Einstellungen für Baumdiagramme}
+\begin{tikzpicture}[every node/.style={draw, rectangle, minimum width=1cm}, 
+	grow cyclic,
+	level 1/.style={sibling angle=45, nodes={fill=orange!20, rectangle, draw=orange, text=blue}},
+	level distance=2cm
+	]
+	\node[blue, text=black, ultra thick, fill=blue!20]{Eltern}[green, ->, thick] 
+	child {node {Kind 1}}
+	child {node {Kind 2}}
+	child {node {Kind 3}}
+	child [blue]{node [fill=blue!20]{Kind 4}}
+	child {node {Kind 5}}
+	child {node {Kind 6}}
+	child {node {Kind 7}} 	
+	child {node {Kind 8}};
+\end{tikzpicture}
+
+\begin{tikzpicture}[ 
+	grow=right,
+	level 1/.style={sibling distance=1cm, level distance=3cm,nodes={rectangle,draw}},
+	level 2/.style={sibling distance=1cm,level distance=3cm},
+	edge from parent path ={(\tikzparentnode.east) .. controls +(1,0) and +(-1,0) .. (\tikzchildnode.west)},
+	Pfad/.style={xshift=-0.3cm,draw=none}
+	]
+	\node{Eltern} 
+	child {node {Kind 1} edge from parent node [below,Pfad] {Test}}
+	child {node {Kind 2}}
+	child {node {Kind 3}}
+	child {node {Kind 4}
+		child {node {Enkel 1}}
+		child {node {Enkel 2}}};
+\end{tikzpicture}
+
+	\begin{tikzpicture}[every node/.style={draw, rectangle, minimum width=1cm},
+		grow=right,
+		edge from parent fork right,
+	%level distance= 2cm, sibling distance=2cm
+	level 1/.style={sibling distance=1cm, level distance=3cm},
+	level 2/.style={sibling distance=1cm, level distance =2cm},
+	]
+	
+	\node {Eltern} 
+	child {node {Kind 1}}
+	child {node {Kind 2}}
+	child {node {Kind 3}}
+	child {node {Kind 4}
+		child {node {Enkel 1}}
+		child {node {Enkelin 1}}	
+	};
+	
+\end{tikzpicture}
+
+\end{document}

@@ -1,0 +1,30 @@
+\documentclass{article}
+
+\usepackage{tikz}
+\usepackage{chemfig}
+
+\begin{document}
+	
+	\subsection*{Anzahl von Atomen und Ladungen}
+	\subsubsection*{Ladungen}
+	
+	\chemfig{Mg^{2+}}
+	
+	\subsubsection*{Beschriftung von Molekülen}
+	
+	\schemestart
+	\chemname{\chemfig{H_2O}}{Wasser}
+	\schemestop
+	
+	\subsubsection*{Bindungen}
+	\chemfig{H-C~C=CH_2}
+	
+	\subsubsection*{Formeln}
+	
+	\chemfig{Mg -> Mg^{2+}+2e^{-}}
+	
+	
+	\subsubsection*{Verzweigungen}
+	\chemfig[atom sep=4em] {[0]0-[1]{1-45}-[2]{2-90}-[3]{3-135}-[4]{4-180}-[5]{5-225}-[6]{6-270}-[7]{7-315}}
+
+\end{document}

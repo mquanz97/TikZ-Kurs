@@ -1,0 +1,52 @@
+\documentclass{article}
+\usepackage[european, siunitx]{circuitikz}
+
+\begin{document}
+
+	\subsubsection*{Knoten}
+
+\begin{circuitikz}
+	%\draw(0,0) to [R,-*] (2,0);
+	\draw(2,0) to [R,*-*] (4,0);
+\end{circuitikz}
+\newline
+
+	\begin{circuitikz}
+		%\draw(0,0) to (2,0);
+		%\draw(0,0) to (1,0) node[circ]{} to (2,0);
+		\draw(1,-1) to (1,1);
+		\draw (1,0) node[circ]{};
+	\end{circuitikz}
+	
+	\subsubsection*{Stromkreis mit Kombination aus Reihen- und Parallelschaltung}
+	
+	\begin{circuitikz}
+		\draw (0,0) to [european voltage source, l=$U_1$](0,0) to (0,2)
+		to (1,2)
+		to [R, l= $R_1$](2.5,2) to [C, l=$C_1$] (3.5,2)
+		to (4,2)
+		to(4,1);
+		\draw (4,1) to (3,1) to [R, l=$R_2$] (3,-1) to (4,-1);
+		\draw (4,1) to (5,1) to [R, l=$R_3$] (5,-1) to (4,-1)
+		to (4,-2) to (0,-2) to(0,0);
+		\draw (4,1) node [circ]{};
+		\draw (4,-1) node [circ]{};
+	\end{circuitikz}
+	
+\subsubsection*{Induktionspule}
+
+	\begin{circuitikz}
+		
+		\draw (0,0) node[transformer core, cute](T){}
+		(T.A1) node[anchor=east]{}
+		(T.A2) node[anchor=east]{}
+		(T.B1) node[anchor=west]{}
+		(T.B2) node[anchor=west]{};
+		
+		\draw (T.A1) to ++(-1,0) to [european voltage source, l_={100<\volt>}] ++(0,-2) to ++(0,-0.1) to (T.A2);
+		
+		\draw(T.B1) to ++(1,0) to [rmeter,t=V] ++(0,-2) to ++ (0,-0.1) to (T.B2);
+				
+	\end{circuitikz}	
+
+\end{document}

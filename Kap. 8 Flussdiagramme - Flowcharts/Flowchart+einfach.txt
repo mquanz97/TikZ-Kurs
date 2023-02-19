@@ -1,0 +1,39 @@
+\documentclass{article}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usepackage{xcolor}
+\usetikzlibrary{shapes}
+
+\begin{document}
+\subsubsection*{Simples TOTE-Schema}
+\begin{tikzpicture}
+	\node(1) {Test};
+	\node[above of =1] (0) {};
+	\node[below of =1] (2) {Operate};
+	\node[right of =1, xshift=1cm] (3) {Exit};
+	\draw[->](1)--node[right]{nein}(2);
+	\draw[->](2)--++(-1,0)|-(1);	
+	\draw[->](1)--node[above]{ja}(3);
+	\draw[->](0)--(1);
+	
+	
+\end{tikzpicture}	
+
+\subsubsection*{Schönes TOTE-Schema}
+\begin{tikzpicture}[
+	Entscheidung/.style={diamond, fill=lightgray, thick,draw=black},
+	Prozess/.style={rectangle, fill=blue!10, thick, draw=black},
+	node distance=20mm]
+	\node[Entscheidung](1) {Test};
+	\node[above of =1,yshift=-0.5cm] (0) {};
+	\node[Prozess, below of =1] (2) {Operate};
+	\node[right of =1] (3) {Exit};
+	\draw[->](1)--node[right]{nein}(2);
+	\draw[->](2)--++(-1,0)|-(1);	
+	\draw[->](1)--node[above]{ja}(3);
+	\draw[->](0)--(1);
+	
+	
+\end{tikzpicture}
+	
+\end{document}

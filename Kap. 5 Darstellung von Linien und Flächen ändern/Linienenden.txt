@@ -1,0 +1,39 @@
+\documentclass{article}
+\usepackage{tikz}
+
+\begin{document}
+	\section*{Linienstärken}
+	\begin{tikzpicture}[line width =5pt]
+%\draw(0,0)--(2,0);
+		\draw[ultra thick] (0,-1)--(2,-1) node[right]{ultra thick};
+		\draw[very thick] (0,-2)--(2,-2) node[right]{very thick};
+		\draw[thick] (0,-3)--(2,-3) node[right]{thick};
+		\draw[thin](0,-4)--(2,-4) node[right]{thin};
+		\draw[very thin](0,-5)--(2,-5) node[right]{very thin};
+		\draw[ultra thin] (0,-6)--(2,-6) node[right]{ultra thin};
+		
+	\end{tikzpicture}
+	
+	\section*{Linienstärken mit Größenangabe}
+	\begin{tikzpicture}
+		\draw[line width =1pt] (0,-1)--(2,-1) (3,-1)node{1pt};
+		\draw[line width =5pt] (0,-2)--(2,-2) (3,-2)node{5pt};
+		\draw[line width =10 pt] (0,-3)--(2,-3) (3,-3)node{10pt};
+		\draw[line width =1cm](0,-4)--(2,-4) (3,-4)node{1cm};
+		\draw[line width =0.5cm](0,-5)--(2,-5) (3,-5)node{0.5cm};
+		\draw[line width =1mm] (0,-6)--(2,-6) (3,-6)node{1mm};
+		
+	\end{tikzpicture}
+	
+	\section*{Linienenden}
+	\begin{tikzpicture}[line width =10pt,]
+		\draw (0,2)--(2,2) node[right]{Standard};
+		\draw[line cap=rect] (0,0)--(2,0) node[right]{line cap=rect};
+		\draw[line cap=round] (0,-2)--(2,-2) node[right]{line cap=round};
+		\draw[line cap=round, <->] (0,-4)--(2,-4) node[right]{line cap= round, beidseitiger Pfeil};
+		\draw[line cap=round, ->](0,-6)--(2,-6) node[right]{line cap=round, Pfeil nach rechts};
+		\draw[line cap=rect, ->](0,-8)--(2,-8) node[right]{line cap=rect, Pfeil nach rechts};
+		\draw[->](0,-10)--(2,-10) node[right]{Pfeil nach rechts};
+		\draw[|->|](0,-12)--(2,-12) node[right]{Pfeil nach rechts};
+	\end{tikzpicture}
+\end{document}
